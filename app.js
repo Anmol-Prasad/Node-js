@@ -24,7 +24,7 @@ const fs = require('fs');
 app.use(express.json());
 
 const tours = JSON.parse(
-  fs.readFileSync(`${__dirname}/starter/dev-data/data/tours-simple.json`)
+  fs.readFileSync(`${__dirname}/starter/dev-data/data/tours-simple.json`,'utf-8')
 );
 
 app.post('/api/v1/tours', (req, res) => {
@@ -32,7 +32,7 @@ app.post('/api/v1/tours', (req, res) => {
   console.log(newid);
   // const newtour = Object.assign({ id: newid }, req.body);
 
-  // tours.push(newtour);
+  // const tourist=tours.push(newtour);
 
   // fs.writeFile(
   //   `${__dirname}/starter/dev-data/data/tours-simple.json`,
